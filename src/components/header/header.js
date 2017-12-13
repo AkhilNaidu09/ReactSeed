@@ -8,12 +8,10 @@ export default class Header extends React.Component {
     return (
       <div className="app">
         <div className="header">
-          <h2>Header</h2>
-          <ul role="nav">
-          <li><Link to="/home">About</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
+        <ul>
+        <li><Link to="/home" replace>About</Link></li>
+        <li><Link to="/contact" replace>Contact</Link></li>
         </ul>
-
         </div>
       </div>
     );

@@ -9,6 +9,7 @@ let history = createHashHistory();
 import {
     Router,
     HashRouter,
+    IndexRoute,
     Route,
     Switch,
     Link
@@ -17,16 +18,12 @@ import {
 export default class RoutesHandler extends React.Component {
     render() {
 return (
-    <Router history={history} >
-
-<Switch>
-
-    <Route pathname="App" path="/app" component={App}/>
-      <Route pathname="Home" path="/home" component={Home}/>
-      <Route pathname="Contact" path="/contact" component={Contact}/>
-
-
-</Switch>
+    <Router history={history}>
+    <div>
+    <Route path="/" component={App}/>
+    <Route  path="/home" component={Home}/>
+    <Route  path="/contact" component={Contact}/>
+    </div>
     </Router>
   );
 }
