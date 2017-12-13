@@ -9,7 +9,7 @@ export default class Header extends React.Component {
       <div className="app">
         <div className="header">
         <ul>
-        <li><Link to="/home" replace>About</Link></li>
+        <li><Link to="/home" replace>Home</Link></li>
         <li><Link to="/contact" replace>Contact</Link></li>
         </ul>
         </div>

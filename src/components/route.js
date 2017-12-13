@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom';
 import Home from './home/home.js'
 import App from './App.js'
 import Contact from './contact/contact.js'
+import ContactsReducer from './contact/contact-reducer.js'
 import { createHashHistory } from 'history'; 
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+let store = createStore(ContactsReducer)
 let history = createHashHistory();
 
 import {
@@ -18,6 +22,7 @@ import {
 export default class RoutesHandler extends React.Component {
     render() {
 return (
+  <Provider store={store}>
     <Router history={history}>
     <div>
     <Route path="/" component={App}/>
@@ -25,6 +30,7 @@ return (
     <Route  path="/contact" component={Contact}/>
     </div>
     </Router>
+    </Provider>
   );
 }
 }
