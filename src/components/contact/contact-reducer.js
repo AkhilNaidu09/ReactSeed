@@ -11,7 +11,7 @@ const ContactsReducer = (state, action) => {
     case 'Get_State':
       return state = initialContactState;
     default:
-      return state
+      return initialContactState
   }
 }
 
