@@ -11,16 +11,13 @@ class Contact extends React.Component {
   }
   constructor(props) {
     super(props);
-    // if(localStorage.getItem('isLoggedin') !== 'true'){
-    //   window.location.reload();
-    // }
   }
   render() {
     return (
       <div className="app">
         <div>
-          <h2>Contact -{this.props.contacts.FirstName}</h2>
-          <button onClick={this.props.onHelloClick.bind(this,this.props.contacts)} type="button" value="hello">Hello</button>
+          <h2>Contact</h2>
+          {/* <button onClick={this.props.onHelloClick.bind(this,this.props.contacts)} type="button" value="hello">Hello</button> */}
         </div>
       </div>
     );
@@ -28,9 +25,8 @@ class Contact extends React.Component {
 }
 
 const mapStateToProps = (state,dispatch) => {
-  console.log(state);
   return {
-    contacts: state
+    contacts: state.ContactsReducer
   }
 }
 

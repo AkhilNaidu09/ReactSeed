@@ -5,11 +5,16 @@ import App from './App.js'
 import Contact from './contact/contact.js'
 import Login from './login/login.js'
 import ContactsReducer from './contact/contact-reducer.js'
+import LoginReducer from './login/login-reducer.js'
 import { createHashHistory } from 'history'; 
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-//import requireAuth from './auth-handler'
-let store = createStore(ContactsReducer)
+import { combineReducers, createStore } from 'redux'
+
+const rootReducer = combineReducers({
+  LoginReducer,
+  ContactsReducer
+});
+let store = createStore(rootReducer)
 let history = createHashHistory();
 
 import {

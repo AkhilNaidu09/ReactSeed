@@ -1,6 +1,6 @@
-export const toggleHello = state => {
+export const SetFormValidity = state => {
     return {
-      type: 'TOGGLE_Hello',
+      type: 'SetFormValidity',
       state
     }
   }

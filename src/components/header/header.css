@@ -7,6 +7,14 @@ h2 {
 .padding-10{
     padding:15px
 }
+li a:hover:not(.active) {
+    color: white;
+    text-decoration: none;
+}
+a:focus, a:hover , a:active{
+    color: white;
+    text-decoration: none;
+}
 .header {
     box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
     height: 42px;
