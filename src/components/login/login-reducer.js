@@ -4,7 +4,7 @@ var initialContactState = {
   MiddleName: 'Anneboina'
 };
 
-const ContactsReducer = (state, action) => {
+const LoginReducer = (state, action) => {
   switch (action.type) {
     case 'TOGGLE_Hello':
       return initialContactState;
@@ -13,4 +13,4 @@ const ContactsReducer = (state, action) => {
   }
 }
 
-export default ContactsReducer;
+export default LoginReducer;
