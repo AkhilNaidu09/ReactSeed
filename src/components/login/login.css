@@ -3,3 +3,11 @@
   box-shadow:1px 1px 1px 1px #808080cf;
   background: aliceblue;
 }
+
+.formErrors {
+  color: red;
+  
+}
+.formErrors ul{
+  background:none;
+}

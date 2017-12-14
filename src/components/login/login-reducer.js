@@ -1,6 +1,7 @@
 var initialLoginState = {
   username: '',
   password: '',
+  formErrors: {username: '', password: ''},
   usernameValid: false,
   passwordValid: false,
   formValid: false
