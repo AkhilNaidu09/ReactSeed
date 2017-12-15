@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import logo from './../logo.svg'
 import './App.css'
-import Header from './header/header.js';
-import Footer from './footer/footer.js';
+import Header from './../header/header.js';
+import Footer from './../footer/footer.js';
 import renderIf from 'render-if';
 import {withRouter} from "react-router-dom";
-import { Toast } from './common/toast/toast';
+import { Toast } from './../common/toast/toast';
+
 class App extends Component {
   componentWillMount(){
 
@@ -26,10 +26,12 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        {renderIf(localStorage.getItem('isLoggedin') == 'true' )(<Header></Header>)}
+        {renderIf(localStorage.getItem('isLoggedin') == 'true' )(
+        <Header></Header>
+        )}
         
         <div className="main" id="mainContent">
-        <Toast errorMessage={this.state.ErrorMessage}></Toast>
+        {renderIf(localStorage.getItem('isLoggedin') == 'true' )(<Toast errorMessage={this.state.ErrorMessage}></Toast>)}
         {this.props.children}
         </div>
         {renderIf(localStorage.getItem('isLoggedin') == 'true' )(<Footer></Footer>)}
