@@ -8,3 +8,8 @@
     width: 100%;
     text-align: center;
   }
+  .tableStyle {
+    box-shadow: 1px 1px 1px 1px #8080808c;
+    padding: 5px;
+    background: white;
+  }

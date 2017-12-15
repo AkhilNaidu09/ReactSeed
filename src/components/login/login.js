@@ -12,7 +12,7 @@ class Login extends React.Component {
     this.state = this.props.loginForm;
   }
   loginClick() {
-    if(this.state.username === 'Akhil' && this.state.password === '12345') {
+    if(this.state.username === 'Akhil' && this.state.password === '123456') {
       localStorage.setItem('isLoggedin', true);
       localStorage.setItem('UserName',this.state.username)
       this.props.history.push('/home');
