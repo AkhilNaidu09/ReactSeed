@@ -5,6 +5,8 @@ import Footer from './../footer/footer.js';
 import renderIf from 'render-if';
 import {withRouter} from "react-router-dom";
 import { Toast } from './../common/toast/toast';
+import { SetToastMessage } from './app-action'
+import {connect} from 'react-redux'
 
 class App extends Component {
   componentWillMount(){
@@ -19,9 +21,7 @@ class App extends Component {
       else {
         this.props.history.push('/home');
       }
-      this.state = {
-        ErrorMessage:'Unable to load the data !!!!!'
-      };
+      this.state = this.props.app;
   }
   render() {
     return (
@@ -31,7 +31,7 @@ class App extends Component {
         )}
         
         <div className="main" id="mainContent">
-        {renderIf(localStorage.getItem('isLoggedin') == 'true' )(<Toast errorMessage={this.state.ErrorMessage}></Toast>)}
+        {renderIf(localStorage.getItem('isLoggedin') == 'true')(<Toast errorMessage={this.state.errorMessage}></Toast>)}
         {this.props.children}
         </div>
         {renderIf(localStorage.getItem('isLoggedin') == 'true' )(<Footer></Footer>)}
@@ -41,4 +41,20 @@ class App extends Component {
   }
 }
 
-export default withRouter(App)
+const mapStateToProps = (state,dispatch) => {
+  return {
+    app: state.AppReducer
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+  }
+}
+
+const AppComponent = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(App))
+
+export default AppComponent;

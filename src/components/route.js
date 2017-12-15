@@ -5,6 +5,7 @@ import App from './app/App.js'
 import Contact from './contact/contact.js'
 import Login from './login/login.js'
 import ContactsReducer from './contact/contact-reducer.js'
+import AppReducer from './app/app-reducer.js'
 import LoginReducer from './login/login-reducer.js'
 import { createHashHistory } from 'history'; 
 import { Provider } from 'react-redux'
@@ -12,7 +13,8 @@ import { combineReducers, createStore } from 'redux'
 
 const rootReducer = combineReducers({
   LoginReducer,
-  ContactsReducer
+  ContactsReducer,
+  AppReducer
 });
 let store = createStore(rootReducer)
 let history = createHashHistory();
