@@ -1,7 +1,7 @@
 import React from 'react'
 import './home.css'
 import axios from 'axios';
-import Grid from './../common/grid'
+import Grid from './../common/grid/grid'
 import renderIf from 'render-if';
 import { SyncLoader 
  } from 'react-spinners';
