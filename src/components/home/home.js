@@ -3,7 +3,8 @@ import './home.css'
 import axios from 'axios';
 import Grid from './../common/grid'
 import renderIf from 'render-if';
-import { RingLoader } from 'react-spinners';
+import { SyncLoader 
+ } from 'react-spinners';
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -16,11 +17,11 @@ export default class Home extends React.Component {
     axios.get(`https://reqres.in/api/users?page=2`)
       .then(res => {
         this.setState({ products: res.data.data });
-        this.setState({loading: false});
+        this.setState({ loading: false });
       })
       .catch(error => {
         console.log(error);
-        this.setState({loading: false});
+        this.setState({ loading: false });
       });
   }
   render() {
@@ -34,7 +35,7 @@ export default class Home extends React.Component {
           </div>
         </div>
         <div className='loadingBar sweet-loading'>
-        <RingLoader
+        <SyncLoader
           color={'#123abc'} 
           loading={this.state.loading} 
         />
