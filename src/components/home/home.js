@@ -3,21 +3,24 @@ import './home.css'
 import axios from 'axios';
 import Grid from './../common/grid'
 import renderIf from 'render-if';
-
+import { RingLoader } from 'react-spinners';
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: []
+      products: [],
+      loading: true
     };
   }
   componentWillMount() {
     axios.get(`https://reqres.in/api/users?page=2`)
       .then(res => {
         this.setState({ products: res.data.data });
+        this.setState({loading: false});
       })
       .catch(error => {
         console.log(error);
+        this.setState({loading: false});
       });
   }
   render() {
@@ -30,6 +33,12 @@ export default class Home extends React.Component {
             {renderIf(this.state.products.length <= 0)(<span>No Record found</span>)}
           </div>
         </div>
+        <div className='loadingBar sweet-loading'>
+        <RingLoader
+          color={'#123abc'} 
+          loading={this.state.loading} 
+        />
+      </div>
       </div>
     );
   }

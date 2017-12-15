@@ -4,3 +4,18 @@ body {
   font-family: sans-serif;
   background: #cecece54;
 }
+
+.css-jxiqlq {
+  left: 0 !important;
+  top: 0 !important;
+  position: fixed !important;
+  z-index: 100000001 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: #d8d5d5 !important;
+  opacity: .5 !important;
+}
+.css-jxiqlq div{
+  left: 50% !important;
+  top: 50% !important;
+}
