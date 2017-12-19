@@ -1,7 +1,9 @@
 var initialContactState = {
   FirstName: 'Akhil',
   LastName: 'Kumar',
-  MiddleName: 'Anneboina'
+  Email:'test@gmail.com',
+  PhoneNumber:1234567890,
+  ZipCode:500032
 };
 
 const ContactsReducer = (state, action) => {

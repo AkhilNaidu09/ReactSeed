@@ -16,6 +16,7 @@ a:focus, a:hover , a:active{
     text-decoration: none;
 }
 .header {
+    z-index: 100000001;
     box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
     height: 42px;
     background-color: #3f51b5;
