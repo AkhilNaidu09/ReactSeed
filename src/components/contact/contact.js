@@ -52,7 +52,7 @@ class Contact extends React.Component {
             <input type="text" className="form-control" name="errorMessage" value={this.state.ZipCode} onChange={this.formChange.bind(this)} />
 
           </div>
-          <button className="btn btn-secondary" onClick={this.props.onShowToast.bind(this,this.state)} type="button" value="hello">Show Toast</button>
+          <button className="btn btn-secondary" onClick={this.props.onShowToast.bind(this,this.state)} type="button" value="hello">Submit</button>
           </div>
           </form>
         </div>
