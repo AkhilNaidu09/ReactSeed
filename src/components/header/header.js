@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { withRouter } from "react-router-dom";
+import './header.css'
 
  class Header extends React.Component {
    

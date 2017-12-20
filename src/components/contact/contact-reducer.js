@@ -9,7 +9,9 @@ var initialContactState = {
 const ContactsReducer = (state, action) => {
   switch (action.type) {
     case 'TOGGLE_Hello':
-      return initialContactState;
+      return state.initialContactState = action.state;
+      // case 'SetToastMessage':
+      // return (state = action.state);
     default:
       return initialContactState
   }

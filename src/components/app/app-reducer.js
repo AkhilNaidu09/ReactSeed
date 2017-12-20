@@ -1,15 +1,17 @@
 var initialAppState = {
-   serverError:false,
-   errorMessage:''
-  };
-  
-  const AppReducer = (state, action) => {
-    switch (action.type) {
-      case 'SetToastMessage':
-        return action.state;
-      default:
-        return initialAppState
-    }
+  serverError: false,
+  errorMessage: ''
+};
+
+const AppReducer = (state, action) => {
+  switch (action.type) {
+    case 'SetToastMessage':
+      return (state = action.state);
+    case 'ResetToastMessage':
+      return (state = initialAppState);
+    default:
+      return initialAppState
   }
-  
-  export default AppReducer;
+}
+
+export default AppReducer;

@@ -10,8 +10,8 @@ import {connect} from 'react-redux'
 
 class App extends Component {
   componentWillMount(){
-
   }
+
   constructor(props){
     super(props);
 
@@ -21,8 +21,10 @@ class App extends Component {
       else {
         this.props.history.push('/home');
       }
+      
       this.state = this.props.app;
   }
+  
   render() {
     return (
       <div className="app">
@@ -31,7 +33,7 @@ class App extends Component {
         )}
         
         <div className="main" id="mainContent">
-        {renderIf(localStorage.getItem('isLoggedin') == 'true')(<Toast errorMessage={this.state.errorMessage}></Toast>)}
+        {renderIf(localStorage.getItem('isLoggedin') == 'true')(<Toast errorMessage={this.props.app.errorMessage}></Toast>)}
         {this.props.children}
         </div>
         {renderIf(localStorage.getItem('isLoggedin') == 'true' )(<Footer></Footer>)}

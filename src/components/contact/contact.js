@@ -29,27 +29,27 @@ class Contact extends React.Component {
           <div className="card formTextAlign mx-auto col-4">
           <div className="form-group">
             <label htmlFor="FistName">Fist Name</label>
-            <input type="text" className="form-control" name="errorMessage" value={this.state.FirstName} onChange={this.formChange.bind(this)} />
+            <input type="text" className="form-control" name="FirstName" value={this.state.FirstName} onChange={this.formChange.bind(this)} />
 
           </div>
           <div className="form-group">
             <label htmlFor="LastName">Last Name</label>
-            <input type="text" className="form-control" name="errorMessage" value={this.state.LastName} onChange={this.formChange.bind(this)} />
+            <input type="text" className="form-control" name="LastName" value={this.state.LastName} onChange={this.formChange.bind(this)} />
 
           </div>
           <div className="form-group">
             <label htmlFor="Email">Email Address</label>
-            <input type="text" className="form-control" name="errorMessage" value={this.state.Email} onChange={this.formChange.bind(this)} />
+            <input type="text" className="form-control" name="Email" value={this.state.Email} onChange={this.formChange.bind(this)} />
 
           </div>
           <div className="form-group">
             <label htmlFor="PhoneNumber">Phone Number</label>
-            <input type="text" className="form-control" name="errorMessage" value={this.state.PhoneNumber} onChange={this.formChange.bind(this)} />
+            <input type="text" className="form-control" name="PhoneNumber" value={this.state.PhoneNumber} onChange={this.formChange.bind(this)} />
 
           </div>
           <div className="form-group">
             <label htmlFor="ZipCode">Zip Code</label>
-            <input type="text" className="form-control" name="errorMessage" value={this.state.ZipCode} onChange={this.formChange.bind(this)} />
+            <input type="text" className="form-control" name="ZipCode" value={this.state.ZipCode} onChange={this.formChange.bind(this)} />
 
           </div>
           <button className="btn btn-secondary" onClick={this.props.onShowToast.bind(this,this.state)} type="button" value="hello">Submit</button>
@@ -71,7 +71,9 @@ const mapStateToProps = (state,dispatch) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onShowToast: (toastState) => {
-      dispatch(SetToastMessage(toastState));
+
+      dispatch(SetToastMessage({serverError:true,
+        errorMessage:'Failed to update the Contacts'}));
     }
   }
 }

@@ -4,3 +4,10 @@ export const SetToastMessage = state => {
       state
     }
   }
+
+  export const ResetToastMessage = state => {
+    return {
+      type: 'ResetToastMessage',
+      state
+    }
+  }
