@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
 import Home from './home/home.js'
 import App from './app/App.js'
 import Contact from './contact/contact.js'
